@@ -1,0 +1,141 @@
+#box-model {
+    height: 100px;
+    width: 100px;
+    background: green;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+span > p {
+    font-size: 2rem;
+    word-wrap: break-word;
+    position: fixed;
+}
+
+div + p {
+    background: yellow;
+}
+
+.fancy {
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(#e66465, #9198e5);
+    box-shadow: 0 14px 28px 0 rgba(0,0,0,.25), 0 10px 10px 0 rgba(0,0,0,.26);
+    position: absolute;
+}
+
+.fancy:focus {
+    background: linear-gradient(#ffffff, #000000);
+}
+
+input:disabled {
+    background-color: var(--main-bg-color);
+  }
+
+.woo{
+    background: #00000077;
+}
+
+.woo:nth-child(2n){
+    background-color: var(--main-bg-color);
+}
+
+.square {
+    height: 100px;
+    width: 100px;
+    background: red;
+    margin: 5rem;
+    transition: background 3s, width 3s;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* border-radius: 25px; */
+}
+
+.square:hover {
+    background: blue;
+    /* width: 1000px; */
+    
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+    10%{
+        background: orange;
+    }
+    20%{
+        background: yellow;
+    }
+    30%{
+        background: green;
+    }
+    40%{
+        background: blue;
+    }
+    50%{
+        background: purple;
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
+.heart-container {
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.heart {
+    background-color: rgb(248, 103, 103);
+    height: 100px;
+    width: 100px;
+    transform: rotate(45deg);
+    animation: heartbeat 1s infinite;
+}
+.heart::before,
+.heart::after{
+    content: '';
+    position: absolute;
+    background-color: rgb(248, 103, 103);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.heart::before{
+    top: -50px;
+}
+
+.heart::after{
+    right: 50px;
+}
+
+@keyframes heartbeat {
+    0%{
+        transform: scale(1) rotate(45deg);
+    }
+    20%{
+        transform: scale(1.25) rotate(45deg);
+    }
+    25%{
+        transform: scale(1.1) rotate(45deg);
+    }
+    40%{
+        transform: scale(1.5) rotate(45deg);
+    }
+}
+
+@media(min-width: 400px) and (max-width: 600px){
+    .square {
+        height: 100px;
+        width: 100px;
+        margin: 0 auto;
+        background-color: lavender;
+    }
+}
